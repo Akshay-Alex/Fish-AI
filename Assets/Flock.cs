@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     float speed;
+    bool turning = false;
     
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,20 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Bounds b = new Bounds(FlockManager.FM.transform.position, FlockManager.FM.tankLimits * 2);
+        if(!b.Contains(transform.position))
+        {
+            turning = true;
+        }
+        else
+        {
+            turning = false;
+        }
+        if(turning)
+        {
+            Vector3 direction = FlockManager.FM.transform.position - transform.position;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), FlockManager.FM.rotationSpeed * Time.deltaTime);
+        }
         if (Random.Range(0, 100) < FlockManager.FM.speedResetFrequency)
         {
             speed = Random.Range(FlockManager.FM.minimumSpeed, FlockManager.FM.maximumSpeed);
