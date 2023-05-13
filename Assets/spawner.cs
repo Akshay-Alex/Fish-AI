@@ -62,7 +62,7 @@ public class spawner : MonoBehaviour
                                                             UnityEngine.Random.Range(-maxPos.y, maxPos.y),
                                                             UnityEngine.Random.Range(-maxPos.z, maxPos.z)
                                                             );
-        _currBatch.Add(new ObjData(position, new Vector3(2, 2, 2), Quaternion.identity));
+        _currBatch.Add(new ObjData(position, new Vector3(1, 1, 1), Quaternion.identity));
     }
 
     private List<ObjData> BuildNewBatch()
@@ -72,9 +72,23 @@ public class spawner : MonoBehaviour
 
     void Update()
     {
+        updatePosition();
         RenderBatch();
     }
-
+    void updatePosition()
+    {
+        var batchindex = 1;
+        foreach (var batch in batches)
+        {
+            var index = 0;
+            foreach(ObjData obj in batch)
+            {
+                obj.pos = FlockManager.FM.allFish[index%100].transform.position * batchindex *2;
+                index++;
+            }
+            batchindex++;
+        }
+    }
     private void RenderBatch()
     {
         foreach (var batch in batches)

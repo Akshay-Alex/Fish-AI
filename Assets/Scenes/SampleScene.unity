@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &222990522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec6a1e74014d1540916f2618b7a2bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instanceNum: 1000
+  instanceNum: 5000
   maxPos: {x: 100, y: 100, z: 100}
   objMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   objMat: {fileID: 2100000, guid: a68480d4933254b439b1f04bef2abbaa, type: 2}
@@ -294,10 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01469f2690534e4e88f52a83fc513f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 1454605063897696040, guid: eeb2ffe31c88fa340ade2acbc80fde9b, type: 3}
-  numberOfFishes: 20
+  fishPrefab: {fileID: 4213697199277616318, guid: 1ced3d6bbae33074382fd86b0ac3c274, type: 3}
+  numberOfFishes: 100
   allFish: []
-  tankLimits: {x: 5, y: 3, z: 5}
+  tankLimits: {x: 50, y: 50, z: 50}
   followSettings: 0
   objectToFollow: {fileID: 486166057}
   goalPosition: {x: 0, y: 0, z: 0}
@@ -492,7 +492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
